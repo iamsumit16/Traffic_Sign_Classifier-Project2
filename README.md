@@ -1,5 +1,20 @@
 # Udacity-CarND: Traffic Sign Classifier
 
+### Overview
+In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train a model so it can decode traffic signs from natural images by using the German Traffic Sign Dataset. After the model is trained, you will then test your model program on new images of traffic signs you find on the web, or, if you're feeling adventurous pictures of traffic signs you find locally!
+
+### Dependencies
+This project requires Python 3.5 and the following Python libraries installed:
+
+- Jupyter
+- NumPy
+- SciPy
+- scikit-learn
+- TensorFlow
+- Matplotlib
+- Pandas (Optional)
+
+
 ### The goal of this project is to make a traffic sign classifier by deploying a convolutional neural network trained on a [German Traffic Sign dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
 
 - The steps taken to build the classifier are as follows:
@@ -23,7 +38,8 @@ The data is consisted of:
 
 We are provided with images of size 32x32x3. I converted all the images to grayscale foremost to make working with the data a little faster as the no. of channel information is reduced and all the important feature information is still conserved.
 
-The traning data is skewed and some of the classes have less than 10 times the images w.r.t to the class with highest number of images. Because we don't have a balanced data, the trained network over this data will be biased towards recognizing the image it has seen the most. One of the ways to deal with this issue is to remove the data from the classes having more data, but is that the wat to go? We are throwing away legit data points from our dataset. Why not add more data to the dataset for the underrepresented classes? So here, we iterate through all the classes and check if they have less images than the mean number of images in the training data set. If they are less than the mean number of images, we apply transformations on the images such as translate, rotate and shear (you can do a lot more such as changing brightness, changing pov, blur, fade etc) and produce the copies of data for that classes until we reach the mean.
+The traning data is skewed and some of the classes have less than 10 times the images w.r.t to the class with highest number of images. Because we don't have a balanced data, the trained network over this data will be biased towards recognizing the image it has seen the most. One of the ways to deal with this issue is to remove the data from the classes having more data, but is that the wat to go? We are throwing away legit data points from our dataset. Why not add more data to the dataset for the under-represented classes? So here, we iterate through all the classes and check if they have less images than the mean number of images in the training data set. If they are less than the mean number of images, we apply transformations on the images such as translate, rotate and shear (you can do a lot more such as changing brightness, changing pov, blur, fade etc) and produce the copies of data for that classes until we reach the mean.
+Augmenting data resulted in total 46,000 training images.
 
 After this point we just need to normalize the data before feeding it to the network which makes the convergence and calculations occuring in the CNN faster and accurate.
 
@@ -49,7 +65,17 @@ The second architechture is [Traffic Sign Recognition with MultiScale Convolutio
 11. Dropout layer
 12. Fully connected layer (800 in, 43 out)
 
-![alt text](C:\Users\vzy75q\Desktop\ML\trafficpics/Drawing1.jpg)
+<image>
+  
+### Training and testing the data
+
+The classifier is trained over augmented and normalized training dataset. After testing the accuracy over the test dataset (touched at end after desired validation accuracy was achivied), the new images were tested. The iamges with the highest prediction probabilities from the dataset are viewed against each test image.
+
+<image>
+
+There are still a lot of things we can experiment with such as network architechtures, image preprocessing and never ending fiddling with the hypermeters. 
+
+
 
 
 
