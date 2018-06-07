@@ -17,7 +17,7 @@ This project requires Python 3.5 and the following Python libraries installed:
 
 ### The goal of this project is to make a traffic sign classifier by deploying a convolutional neural network trained on a [German Traffic Sign dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
 
-- The steps taken to build the classifier are as follows:
+The steps taken to build the classifier are as follows:
 - Download and load the pickle data (the data is already split in training, validation and test sets)
 - Analyze the data and check distribution 
 - Preprocess the data (convert to grayscale, apply contrast limited adaptive histogram equalization, augment the data by applying affine transformations, normalize the data before feeding it to the neural network
@@ -39,7 +39,7 @@ The data is consisted of:
 We are provided with images of size 32x32x3. I converted all the images to grayscale foremost to make working with the data a little faster as the no. of channel information is reduced and all the important feature information is still conserved.
 
 The traning data is skewed and some of the classes have less than 10 times the images w.r.t to the class with highest number of images. Because we don't have a balanced data, the trained network over this data will be biased towards recognizing the image it has seen the most. One of the ways to deal with this issue is to remove the data from the classes having more data, but is that the wat to go? We are throwing away legit data points from our dataset. Why not add more data to the dataset for the under-represented classes? So here, we iterate through all the classes and check if they have less images than the mean number of images in the training data set. If they are less than the mean number of images, we apply transformations on the images such as translate, rotate and shear (you can do a lot more such as changing brightness, changing pov, blur, fade etc) and produce the copies of data for that classes until we reach the mean.
-Augmenting data resulted in total 46,000 training images.
+Augmenting data resulted in over 46,000 training images.
 
 After this point we just need to normalize the data before feeding it to the network which makes the convergence and calculations occuring in the CNN faster and accurate.
 
