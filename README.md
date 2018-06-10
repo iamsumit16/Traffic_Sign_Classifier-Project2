@@ -85,7 +85,7 @@ The classifier is trained over augmented and normalized training dataset. After 
 
 ![Test Images from internet](https://github.com/iamsumit16/Udacity-CarND_Traffic_Sign_Classifier-Project2/blob/master/saved_images_from_codefile/top_k.png)
 
-![Softmax Probabilities for test output](https://github.com/iamsumit16/Udacity-CarND_Traffic_Sign_Classifier-Project2/blob/master/saved_images_from_codefile/softmax_p.png)
+![Softmax Probabilities for test output](https://github.com/iamsumit16/Udacity-CarND_Traffic_Sign_Classifier-Project2/blob/master/saved_images_from_codefile/sofmax.png)
 
 There are still a lot of things we can experiment with such as network architechtures, image preprocessing and never ending fiddling with the hypermeters. 
 
