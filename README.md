@@ -75,7 +75,9 @@ The second architecture is [Traffic Sign Recognition with MultiScale Convolution
 9. Flatten layers from numbers 8 (1x1x400 -> 400) and 6 (5x5x16 -> 400)
 10. Concatenate flattened layers to a single size-800 layer
 11. Dropout layer
-12. Fully connected layer (800 in, 43 out)
+12. Fully connected layer (800 in, 120 out)
+11. Dropout layer
+12. Fully connected layer (120 in, 43 out)
 
 ![LeNet02 Architecture](https://github.com/iamsumit16/Udacity-CarND_Traffic_Sign_Classifier-Project2/blob/master/saved_images_from_codefile/lenet22.png) 
   
